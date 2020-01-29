@@ -55,7 +55,7 @@ class GhostABN(nn.Module):
 
     def forward(self, x):
         N, C, H, W = input.shape
-        return functional.batch_norm(
+        x = functional.batch_norm(
                 input.view(-1, C*self.num_splits, H, W), self.running_mean, self.running_var, 
                 self.weight.repeat(self.num_splits), self.bias.repeat(self.num_splits),
                 True, self.momentum, self.eps).view(N, C, H, W) 
