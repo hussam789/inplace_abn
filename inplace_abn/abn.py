@@ -6,7 +6,7 @@ import torch.nn.functional as functional
 from .functions import *
 
 class GhostABN(nn.Module):
-    """Activated Batch Normalization
+    """Activated Ghost Batch Normalization
 
     This gathers a BatchNorm and an activation function in a single module
 
